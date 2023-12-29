@@ -1,0 +1,48 @@
+{
+    "name": "@gjsify/deno-core",
+    "version": "0.0.4",
+    "description": " The core engine at the heart of Deno",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./core/mod.d.ts",
+                "default": "./core/mod.js"
+            },
+            "require": {
+                "types": "./core/mod.d.ts",
+                "default": "./core/mod.js"
+            }
+        },
+        "./mod.js": {
+            "import": {
+                "types": "./core/mod.d.ts",
+                "default": "./core/mod.js"
+            },
+            "require": {
+                "types": "./core/mod.d.ts",
+                "default": "./core/mod.js"
+            }
+        },
+        "./*": {
+            "import": {
+                "default": "./core/*"
+            },
+            "require": {
+                "default": "./core/*"
+            }
+        }
+    },
+    "keywords": [
+        "gjs",
+        "deno",
+        "core"
+    ],
+    "files": [
+        "core"
+    ],
+    "devDependencies": {
+        "@girs/gjs": "^3.2.6",
+        "@gjsify/cli": "workspace:^"
+    }
+}
