@@ -1,4 +1,5 @@
 // GJSIFY START
+import "./lib.js";
 import "./00_primordials.js";
 import "./01_core.js";
 import "./02_error.js";

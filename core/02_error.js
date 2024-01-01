@@ -172,4 +172,4 @@
   }
 
   Error.prepareStackTrace = prepareStackTrace;
-})(this);
+})(globalThis);

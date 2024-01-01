@@ -858,9 +858,12 @@
   }
 
   const v8Console = globalThis.console;
-  const coreConsole = new CoreConsole();
-  globalThis.console = coreConsole;
-  wrapConsole(coreConsole, v8Console);
+  // GJSIFY START
+  // We are using the console implementation from GJS
+  // const coreConsole = new CoreConsole();
+  // globalThis.console = coreConsole;
+  // wrapConsole(coreConsole, v8Console);
+  // GJSIFY END
 
   const {
     op_is_any_array_buffer,
