@@ -1,0 +1,24 @@
+{
+    "display": "Deno",
+    "compilerOptions": {
+        "jsx": "react",
+        "module": "ESNext",
+        "target": "ESNext",
+        "baseUrl": "./",
+        "types": [],
+        "lib": ["ESNext"],
+        "outDir": "lib",
+        "declaration": true,
+        "declarationDir": "lib",
+        "emitDeclarationOnly": true,
+        "rootDir": "core",
+        "composite": true,
+        "resolveJsonModule": false,
+        "allowJs": true,
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true
+    },
+    "reflection": false,
+    "include": ["core/**/*"],
+    "exclude": ["node_modules", "lib"]
+}

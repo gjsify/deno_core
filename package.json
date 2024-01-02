@@ -3,33 +3,39 @@
     "version": "0.0.4",
     "description": " The core engine at the heart of Deno",
     "type": "module",
+    "scripts": {
+        "build": "yarn build:gjsify && yarn build:types && yarn sync:dts",
+        "build:gjsify": "mkdir lib -p && gjsify build --library 'core/**/*.{js,ts}' --exclude '**/*.d.ts' 'lib' 'core/examples' --outdir lib",
+        "build:types": "tsc --project tsconfig.json",
+        "sync:dts": "node copy-d-ts-files.mjs"
+    },
     "exports": {
         ".": {
             "import": {
-                "types": "./core/mod.d.ts",
-                "default": "./core/mod.js"
+                "types": "./lib/mod.d.ts",
+                "default": "./lib/mod.js"
             },
             "require": {
-                "types": "./core/mod.d.ts",
-                "default": "./core/mod.js"
+                "types": "./lib/mod.d.ts",
+                "default": "./lib/mod.js"
             }
         },
         "./mod.js": {
             "import": {
-                "types": "./core/mod.d.ts",
-                "default": "./core/mod.js"
+                "types": "./lib/mod.d.ts",
+                "default": "./lib/mod.js"
             },
             "require": {
-                "types": "./core/mod.d.ts",
-                "default": "./core/mod.js"
+                "types": "./lib/mod.d.ts",
+                "default": "./lib/mod.js"
             }
         },
         "./*": {
             "import": {
-                "default": "./core/*"
+                "default": "./lib/*"
             },
             "require": {
-                "default": "./core/*"
+                "default": "./lib/*"
             }
         }
     },
@@ -39,10 +45,11 @@
         "core"
     ],
     "files": [
-        "core"
+        "lib"
     ],
     "devDependencies": {
         "@girs/gjs": "^3.2.7",
-        "@gjsify/cli": "workspace:^"
+        "@gjsify/cli": "workspace:^",
+        "typescript": "^5.3.3"
     }
 }

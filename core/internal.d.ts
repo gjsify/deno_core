@@ -46,7 +46,7 @@ declare namespace __bootstrap {
    * primordials.StringPrototypeStartsWith('thing', 'hello')
    * ```
    */
-  declare namespace primordials {
+  namespace primordials {
     type UncurryThis<T extends (this: unknown, ...args: unknown[]) => unknown> =
       (self: ThisParameterType<T>, ...args: Parameters<T>) => ReturnType<T>;
     type UncurryThisStaticApply<
@@ -80,7 +80,7 @@ declare namespace __bootstrap {
     // export const SafePromiseAny: typeof Promise.any;
     // export const SafePromiseRace: typeof Promise.race;
     export const SafePromisePrototypeFinally: UncurryThis<
-      Promise.prototype.finally
+      typeof Promise.prototype.finally
     >;
     export const SafeRegExp: typeof RegExp;
 
@@ -396,9 +396,9 @@ declare namespace __bootstrap {
     export const DatePrototypeToUTCString: UncurryThis<
       typeof Date.prototype.toUTCString
     >;
-    export const DatePrototypeToGMTString: UncurryThis<
-      typeof Date.prototype.toGMTString
-    >;
+    // export const DatePrototypeToGMTString: UncurryThis<
+    //   typeof Date.prototype.toGMTString
+    // >;
     export const DatePrototypeGetDate: UncurryThis<
       typeof Date.prototype.getDate
     >;
@@ -499,12 +499,12 @@ declare namespace __bootstrap {
     export const DatePrototypeValueOf: UncurryThis<
       typeof Date.prototype.valueOf
     >;
-    export const DatePrototypeGetYear: UncurryThis<
-      typeof Date.prototype.getYear
-    >;
-    export const DatePrototypeSetYear: UncurryThis<
-      typeof Date.prototype.setYear
-    >;
+    // export const DatePrototypeGetYear: UncurryThis<
+    //   typeof Date.prototype.getYear
+    // >;
+    // export const DatePrototypeSetYear: UncurryThis<
+    //   typeof Date.prototype.setYear
+    // >;
     export const DatePrototypeToJSON: UncurryThis<typeof Date.prototype.toJSON>;
     export const DatePrototypeToLocaleString: UncurryThis<
       typeof Date.prototype.toLocaleString
@@ -519,8 +519,8 @@ declare namespace __bootstrap {
     export const ErrorLength: typeof Error.length;
     export const ErrorName: typeof Error.name;
     export const ErrorPrototype: typeof Error.prototype;
-    export const ErrorCaptureStackTrace: typeof Error.captureStackTrace;
-    export const ErrorStackTraceLimit: typeof Error.stackTraceLimit;
+    // export const ErrorCaptureStackTrace: typeof Error.captureStackTrace;
+    // export const ErrorStackTraceLimit: typeof Error.stackTraceLimit;
     export const ErrorPrototypeToString: UncurryThis<
       typeof Error.prototype.toString
     >;
@@ -588,7 +588,7 @@ declare namespace __bootstrap {
     export const MapLength: typeof Map.length;
     export const MapName: typeof Map.name;
     export const MapPrototype: typeof Map.prototype;
-    export const MapPrototypeGetSize: (map: Map) => number;
+    export const MapPrototypeGetSize: (map: Map<any, any>) => number;
     export const MapPrototypeGet: UncurryThis<typeof Map.prototype.get>;
     export const MapPrototypeSet: UncurryThis<typeof Map.prototype.set>;
     export const MapPrototypeHas: UncurryThis<typeof Map.prototype.has>;
@@ -663,21 +663,21 @@ declare namespace __bootstrap {
     export const ObjectFromEntries: typeof Object.fromEntries;
     export const ObjectValues: typeof Object.values;
     export const ObjectPrototype: typeof Object.prototype;
-    export const ObjectPrototype__defineGetter__: UncurryThis<
-      typeof Object.prototype.__defineGetter__
-    >;
-    export const ObjectPrototype__defineSetter__: UncurryThis<
-      typeof Object.prototype.__defineSetter__
-    >;
+    // export const ObjectPrototype__defineGetter__: UncurryThis<
+    //   typeof Object.prototype.__defineGetter__
+    // >;
+    // export const ObjectPrototype__defineSetter__: UncurryThis<
+    //   typeof Object.prototype.__defineSetter__
+    // >;
     export const ObjectPrototypeHasOwnProperty: UncurryThis<
       typeof Object.prototype.hasOwnProperty
     >;
-    export const ObjectPrototype__lookupGetter__: UncurryThis<
-      typeof Object.prototype.__lookupGetter__
-    >;
-    export const ObjectPrototype__lookupSetter__: UncurryThis<
-      typeof Object.prototype.__lookupSetter__
-    >;
+    // export const ObjectPrototype__lookupGetter__: UncurryThis<
+    //   typeof Object.prototype.__lookupGetter__
+    // >;
+    // export const ObjectPrototype__lookupSetter__: UncurryThis<
+    //   typeof Object.prototype.__lookupSetter__
+    // >;
     export const ObjectPrototypeIsPrototypeOf: UncurryThis<
       typeof Object.prototype.isPrototypeOf
     >;
@@ -717,7 +717,7 @@ declare namespace __bootstrap {
     export const SetLength: typeof Set.length;
     export const SetName: typeof Set.name;
     export const SetPrototype: typeof Set.prototype;
-    export const SetPrototypeGetSize: (set: Set) => number;
+    export const SetPrototypeGetSize: (set: Set<any>) => number;
     export const SetPrototypeHas: UncurryThis<typeof Set.prototype.has>;
     export const SetPrototypeAdd: UncurryThis<typeof Set.prototype.add>;
     export const SetPrototypeDelete: UncurryThis<typeof Set.prototype.delete>;

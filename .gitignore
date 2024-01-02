@@ -29,3 +29,7 @@ profile.json
 /tools/wpt/certs/serial*
 
 /ext/websocket/autobahn/reports
+
+# By Gjsify
+lib/
+tsconfig.tsbuildinfo
